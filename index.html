@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+<title>秦皇連爆包</title>
+
+<script>
+	document.documentElement.classList.remove("no-js");
+</script>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script src="../js/jquery.min.js"></script>
+<script src="../js/useragent.js"></script>
+<script src="../js/modernizr-custom.js"></script>
+<!--[if lt IE 9]>
+<script src="../js/html5shiv.min.js"></script>
+<![endif]-->
+<script>
+
+	function SizeChange() {
+		$('.SizeCh1,.SizeCh2').hide();
+		const imgPG = $('body').width();
+
+		if(imgPG <= 980) {
+			$('.SizeCh2').show();
+		}else {
+			$('.SizeCh1').show();
+		}
+
+		if(imgPG <= 720) {
+			$('.Img-Pic01>source').attr('srcset','images/webp/app_pic01.webp');
+			$('.Img-Pic01>img').attr('src','images/app_pic01.jpg');
+			$('.Img-Pic02>source').attr('srcset', 'images/webp/app_pic02.webp');
+			$('.Img-Pic02>img').attr('src', 'images/app_pic02.jpg');
+		}else {
+			$('.Img-Pic01>source').attr('srcset','images/webp/pic01.webp');
+			$('.Img-Pic01>img').attr('src','images/pic01.jpg');
+			$('.Img-Pic02>source').attr('srcset', 'images/webp/pic02.webp');
+			$('.Img-Pic02>img').attr('src', 'images/pic02.jpg');
+		}
+	}
+	
+	$(function(){
+		$('.Show-Web,.Show-App').hide();
+		SizeChange();
+
+		if(checkserAgent()){
+			$('#logo').css({
+				'background':'url(images/webp/logo_fb.webp)',
+				'background-size': '100%'
+			});
+			$('.no-webp #logo').css({
+				'background':'url(images/Global/logo_fb.png)',
+				'background-size': '100%'
+			});
+			$('#logo').children().remove('a');
+			$('#fb').hide();
+			$('.Show-App').show();
+		}else {
+			$('#fb').show();
+			$('.Show-Web').show();
+		}
+	})
+
+	$(window).resize(function () {
+		SizeChange();
+	});
+
+	
+</script>
+
+
+</head>
+
+<body>
+
+	<div id="wrapper">
+		<div id="wrapper_header">
+			<div id="wrapper_footer">
+				<div id="container">
+
+					<div id="logo"><a href="#" title="回首頁" target="_blank"></a></div>
+					<div class="mark"></div>
+				
+					<!--fb 讚-->          
+					<a id="fb" href="#" target="_blank"></a>
+					<!--fb 讚 end-->
+
+					<!-- 內容 -->
+					<main id="content">
+
+						<section class="item">
+							<h2 class="item-title">
+								<picture>
+									<source srcset="images/webp/title01.webp" type="image/webp">
+									<img src="images/title02.png" alt="購買地點">
+								</picture>
+							</h2>
+							<div class="item-con">
+								<a href="#" target="_blank" class="color02">9199平台</a>販售。
+							</div>
+						</section>
+
+						<section class="item">
+							<h2 class="item-title">
+								<picture>
+									<source srcset="images/webp/title02.webp" type="image/webp">
+									<img src="images/title02.png" alt="產包說明">
+								</picture>
+							</h2>
+							<div class="item-con">
+								<ol>
+									<li>售價 NT$ 199 元。</li>
+									<li class="Show-Web">
+										進遊戲中點選「寶箱」輸入序號即可獲得「驚喜福袋」+「金幣福袋」。<a href="#" class="teach-link" target="_blank">
+											<picture>
+												<source srcset="images/webp/icon1.webp" type="image/webp">
+												<img src="images/icon1.png" alt="教學">
+											</picture>
+										</a>
+									</li>
+									<li class="Show-App">
+										儲值教學：<br />
+										登入遊戲後點選【銀行】→【序號兌換】→【活動/產包】→輸入序號→按下確定後即可獲得「驚喜福袋 + 金幣福袋」。
+										<ol class="list-group-type1">
+											<li>手機儲值目前適用Android apk，iPhone iOS系統請至電腦版或老子有錢行動版官網儲值。</li>
+										</ol>
+									</li>
+									<li class="Show-Web">福袋會直接進入我的寶箱，再次點選即可獲得獎項。</li>
+									<li class="Show-App">
+										福袋領取教學：<br />
+										點選【BONUSES】→【寶箱】→【我的寶箱】→獲得福袋。
+									</li>
+								</ol>
+							</div>
+						</section>
+
+						<section class="item">
+							<h2 class="item-title">
+								<picture>
+									<source srcset="images/webp/title03.webp" type="image/webp">
+									<img src="images/title03.png" alt="福袋內容">
+								</picture>
+							</h2>
+							<div class="item-con">
+								每個 秦皇連爆包 各贈送 驚喜福袋(使用後獲得虛寶卡或老幣) 及 金幣福袋(使用後獲得老幣)，共兩個福袋。
+							</div>
+						</section>
+
+						<picture class="Img-Pic01">
+							<source srcset="images/webp/pic01.webp" type="image/webp">
+							<img src="images/pic01.jpg" width="100%" alt="福袋內容">
+						</picture>
+						<picture class="Img-Pic02">
+							<source srcset="images/webp/pic02.webp" type="image/webp">
+							<img src="images/pic02.jpg" width="100%" alt="福袋內容">
+						</picture>
+
+						<section class="item">
+							<h2 class="item-title">
+								<picture>
+									<source srcset="images/webp/title04.webp" type="image/webp">
+									<img src="images/title04.png" alt="注意事項">
+								</picture>
+							</h2>
+							<div class="item-con">
+								<ol>
+									<li>獎項兌換、查詢方式：<br />
+										<ul class="list-group-num1 Show-Web">
+											<li>貼心提醒：福袋至寶箱後請於30日內開啟。</li>
+											<li>老幣請至：會員專區→我的檔案→我的存摺查詢。</li>
+											<li>虛寶卡請至：遊戲大廳→寶箱→我的虛寶查詢，並於獲得後30日使用完畢。</li>
+										</ul>
+										<ul class="list-group-num1 Show-App">
+											<li>貼心提醒：福袋請於30日內點選領取。</li>
+											<li>老幣請至：銀行→我的存摺查詢。</li>
+											<li>虛寶卡請至：BONUSES→寶箱→我的虛寶查詢，並於獲得後30日使用完畢。</li>
+										</ul>
+									</li>
+									<li>若經查證以不正當或非法行為進行儲值，本公司保留帳號停權及回收贈獎之權利。</li>
+									<li class="SizeCh1">活動期間若發生不可抗力之因素，本公司將保留變更或終止本活動時間、<br>內容之權利。</li>
+									<li class="SizeCh2">活動期間若發生不可抗力之因素，本公司將保留變更或終止本活動時間、內容之權利。</li>
+									<li>其他活動內容或變更事項，以官網公告訊息為主，若有任何問題請洽詢客服。</li>
+								</ol>
+							</div>
+						</section>
+
+					</main>
+					<!-- content end -->
+
+				</div><!-- container end -->
+			</div>
+		</div>
+	</div><!-- wrapper end -->
+
+	<footer id="footer"></footer><!--Footer_copyright-->
+
+</body>
+</html>
